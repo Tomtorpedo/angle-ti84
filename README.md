@@ -21,5 +21,5 @@ b2
 b3
 when done it outputs the angle
 ##
-##IMPORTANT!
+## IMPORTANT!
 when trying to calculate it is important to select "DEGREE" in the "mode" menu
