@@ -1,0 +1,74 @@
+"VERSION 1.4":
+Lbl 7
+Menu("MODE","POINT",1,"VECTOR",2)
+Lbl 1
+1→S
+Menu("INPUT POINTS","INPUT POINTS",10,"JUMP TO POINT SELECTION",11)
+Lbl 10
+Prompt A,B,C,D,E,F,G,H,I
+Input "AX",A
+Input "AY",B
+Input "AZ",C
+Input "BX",D
+Input "BY",E
+Input "BZ",F
+Input "CX",G
+Input "CY",H
+Input "CZ",I
+A–D→J
+B–E→K
+C–F→L
+A–G→M
+B–H→N
+C–I→O
+D–G→P
+E–H→Q
+F–I→R
+Lbl 11
+Menu("WHICH POINT?","A",3,"B",4,"C",5)
+Lbl 3
+J→T
+K→U
+L→V
+M→W
+N→X
+O→Y
+Goto 6
+Lbl 4
+J→T
+K→U
+L→V
+P→W
+Q→X
+R→Y
+Goto 6
+Lbl 5
+M→T
+N→U
+O→V
+P→W
+Q→X
+R→Y
+Goto 6
+Lbl 2
+2→S
+Prompt T,U,V,W,X,Y
+Input "A1",T
+Input "A2",U
+Input "A3",V
+Input "B1",W
+Input "B2",X
+Input "B3",Y
+Goto 6
+Lbl 6
+cos^-1(((T*W)+(U*X)+(V*Y))/(sqrt((T)^2+(U)^2+(V)^2)*sqrt((W)^2+(X)^2+(Y)^2)))→Z
+Disp Z
+Pause 
+Menu("MENU","BACK TO MAIN–MENU",7,"GO BACK TO VECTOR/POINT–MENU",8,"END",9)
+Lbl 8
+If S=1
+Then
+Goto 1
+Else:Goto 2
+Lbl 9
+Stop
